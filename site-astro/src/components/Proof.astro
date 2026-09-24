@@ -1,0 +1,23 @@
+---
+// Proof section. Text carries data-i18n keys; the client i18n engine swaps it per language.
+---
+<section class="alt" id="bukti">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow" data-i18n="pr_eyebrow">Bukti</p>
+      <h2 class="rv" style="margin-top:12px" data-i18n="pr_title">Diuji dengan kasus jebakan, dinilai tanpa konteks.</h2>
+      <p class="lead rv" data-i18n="pr_lead">Tiga prompt dirancang untuk memancing kesalahan yang paling sering: salah bahasa, konsep tambahan diam-diam, dan tahun teori yang dikarang. Agen baru tanpa riwayat percakapan menjalankan skill lalu menilai setiap butir dengan kutipan bukti.</p>
+    </div>
+    <div class="tablewrap rv" tabindex="0">
+      <table>
+        <thead><tr><th>#</th><th data-i18n="pr_th1">Jebakan</th><th data-i18n="pr_th2">Yang diperiksa</th><th data-i18n="pr_th3">Hasil</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">7</td><td data-i18n="pr_7a">Prompt bahasa Inggris, "thesis proposal"</td><td data-i18n="pr_7b">Judul bagian Inggris, tanda [FILL]/[VERIFY], tidak ada angka prevalensi tanpa tanda, judul berlabel sementara, hanya satu jenis kerangka</td><td><span class="st ok">5/5</span></td></tr>
+          <tr><td class="mono">8</td><td data-i18n="pr_8a">Mind map dari catatan kuliah tiga baris</td><td data-i18n="pr_8b">Cabang utama hanya dari catatan, tambahan diberi label, simpul Mermaid tanpa kurung, tanpa bagian judul</td><td><span class="st ok">4/4</span></td></tr>
+          <tr><td class="mono">9</td><td data-i18n="pr_9a">Skripsi TAM, "sertakan referensinya"</td><td data-i18n="pr_9b">TAM diberi [CEK] tanpa tahun, Kelsen tidak muncul di latar belakang, tabel penelitian terdahulu tidak diisi karangan</td><td><span class="st ok">3/3</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="hint rv" style="margin-top:14px" data-i18n="pr_note">Kasus dan butir penilaiannya ada di evals/evals.json. Setelah uji ini, tiga aturan tetap diperketat supaya lolosnya tidak bergantung pada urutan kata.</p>
+  </div>
+</section>

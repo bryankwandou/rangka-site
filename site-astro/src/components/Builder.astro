@@ -1,0 +1,40 @@
+---
+// Builder section. Text carries data-i18n keys; the client i18n engine swaps it per language.
+---
+<section id="coba" class="alt">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow" data-i18n="try_eyebrow">Coba di halaman ini</p>
+      <h2 class="rv" style="margin-top:12px" data-i18n="try_title">Bentuk keluarannya seperti ini.</h2>
+      <p class="lead rv" data-i18n="try_lead">Isi tiga kolom, lalu lihat kerangka kosongnya terbentuk. Halaman ini hanya menunjukkan bentuk; isi, bukti, dan pemeriksaan dikerjakan oleh modelnya.</p>
+    </div>
+    <div class="builder">
+      <div class="controls rv">
+        <div class="field">
+          <label for="b-genre" data-i18n="f_genre">Jenis dokumen</label>
+          <select id="b-genre"></select>
+        </div>
+        <div class="field">
+          <label for="b-topic" data-i18n="f_topic">Topik</label>
+          <input id="b-topic" value="penggunaan QRIS di pasar tradisional Yogyakarta">
+        </div>
+        <div class="field">
+          <label for="b-reader" data-i18n="f_reader">Pembaca</label>
+          <input id="b-reader" value="dosen pembimbing">
+        </div>
+        <div class="field" style="margin-bottom:8px">
+          <label for="b-mode" data-i18n="f_mode">Mode</label>
+          <select id="b-mode">
+            <option value="cepat">Cepat</option>
+            <option value="lengkap" selected>Lengkap</option>
+          </select>
+        </div>
+        <p class="hint" data-i18n="f_hint">Mode cepat tetap menjalankan seluruh butir cek genre. Butir genre tidak pernah dilewati.</p>
+      </div>
+      <div class="out rv">
+        <div class="bar"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span>kerangka.md</span><button class="iconbtn" id="b-copy" data-i18n="copy">Salin</button></div>
+        <pre id="b-out" tabindex="0"></pre>
+      </div>
+    </div>
+  </div>
+</section>

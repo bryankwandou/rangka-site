@@ -1,0 +1,28 @@
+---
+import { campuses } from "../data.js";
+// Campus section. Text carries data-i18n keys; the client i18n engine swaps it per language.
+---
+<section id="kampus" class="alt">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow" data-i18n="cam_eyebrow">Pedoman kampus</p>
+      <h2 class="rv" style="margin-top:12px" data-i18n="cam_title">Kerangka yang tahu aturan kampusmu.</h2>
+      <p class="lead rv" data-i18n="cam_lead">Struktur bab bukan selera; ia ditentukan pedoman penulisan. Rangka membawa pedoman Universitas Atma Jaya Makassar secara utuh, catatan bersumber untuk kampus lain, norma tesis tujuh kawasan dunia, label bagian dalam 22 bahasa, dan sebuah penyesuai untuk pedoman kampus mana pun.</p>
+    </div>
+    <div class="campus-chips rv">
+      <span class="cc-lab" data-i18n="cam_src">Catatan bersumber</span>
+      <ul>
+        <li class="strong">UAJM</li>
+        {campuses.map(c => <li>{c}</li>)}
+      </ul>
+    </div>
+    <div class="cards">
+      <div class="card rv"><b class="num">UAJM · KKP</b><h3 data-i18n="cam_1t">Laporan magang, empat bab</h3><p data-i18n="cam_1p">Pendahuluan, tinjauan umum lokasi, uraian teknis, penutup. Lengkap dengan lampiran wajib: foto tiap jenis pekerjaan, log harian, lembar bimbingan.</p></div>
+      <div class="card rv"><b class="num">UAJM · USULAN</b><h3 data-i18n="cam_2t">Proposal & kapasitas diri</h3><p data-i18n="cam_2p">Dua skema, mandiri dan terstruktur. Tujuh pertanyaan penguji dijawab di kerangka, batas 30 lembar dihitung sejak awal.</p></div>
+      <div class="card rv"><b class="num">UAJM · SKRIPSI</b><h3 data-i18n="cam_3t">Bab I sampai V penuh</h3><p data-i18n="cam_3p">Lima belas komponen bagian awal, tabel pemetaan rumusan → tujuan → bab → bukti → kesimpulan → saran, sampai kerangka naskah jurnalnya.</p></div>
+      <div class="card rv"><b class="num">S2 · S3</b><h3 data-i18n="cam_4t">Tesis dan disertasi</h3><p data-i18n="cam_4p">Tangga kontribusi per jenjang, empat bentuk kebaruan yang sah, pola monograf maupun berbasis artikel.</p></div>
+      <div class="card rv"><b class="num">ADAPTER</b><h3 data-i18n="cam_5t">Kampus mana pun, bahasa apa pun</h3><p data-i18n="cam_5p">Empat belas variabel yang benar-benar mengubah kerangka diisi dari pedomanmu. Yang belum pasti ditandai, tidak ditebak.</p></div>
+      <div class="card rv"><b class="num">RANGKUM</b><h3 data-i18n="cam_6t">Berkas jadi satu kerangka</h3><p data-i18n="cam_6p">Draf, catatan, atau satu folder penelitian dibalik jadi kerangka: peta tiap bagian, temuan yatim, dan rencana perbaikan.</p></div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,33 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
+import Hero from "../components/Hero.astro";
+import HowItWorks from "../components/HowItWorks.astro";
+import Builder from "../components/Builder.astro";
+import Genres from "../components/Genres.astro";
+import Campus from "../components/Campus.astro";
+import Checklist from "../components/Checklist.astro";
+import Limits from "../components/Limits.astro";
+import Install from "../components/Install.astro";
+import Proof from "../components/Proof.astro";
+import FAQ from "../components/FAQ.astro";
+import Footer from "../components/Footer.astro";
+---
+<Base title="Rangka — kerangka dulu, baru menulis">
+<a class="skip" href="#main" data-i18n="skip">Lompat ke isi</a>
+<Nav />
+<main id="main">
+<Hero />
+<HowItWorks />
+<Builder />
+<Genres />
+<Campus />
+<Checklist />
+<Limits />
+<Install />
+<Proof />
+<FAQ />
+</main>
+<Footer />
+<p class="sr" id="live" role="status" aria-live="polite"></p>
+</Base>

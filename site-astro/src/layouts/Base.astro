@@ -1,0 +1,49 @@
+---
+import "../styles/fonts.css";
+import "../styles/global.css";
+const { title } = Astro.props;
+---
+<!doctype html>
+<html lang="id" dir="ltr">
+<head>
+<title>{title}</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Skill terbuka untuk Claude dan model AI lain: memetakan masalah, menyusun kerangka, lalu memeriksanya sebelum satu paragraf ditulis. Skripsi, KKP, tesis, LPJ, SK, landing page, README, naskah video.">
+<meta property="og:title" content="Rangka — kerangka dulu, baru menulis">
+<meta property="og:description" content="Empat langkah, tujuh keluarga dokumen, dua belas butir cek. Tidak mengarang angka.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#f7f4ee" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#15130f" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231c1a17'/%3E%3Cpath d='M9 7v18M9 7h9a5 5 0 010 10H9m7 0l6 8' stroke='%23e8b04a' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preload" href="/fonts/fraunces-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+
+<script is:inline>
+/* Boot before first paint: theme and language must never flash. */
+(function(){
+  var d=document.documentElement;
+  try{
+    var t=localStorage.getItem("rangka-theme");
+    if(t==="light"||t==="dark") d.setAttribute("data-theme",t);
+    var l=localStorage.getItem("rangka-lang");
+    if(l&&/^[a-z]{2}$/.test(l)&&l!=="id"){ d.setAttribute("data-boot-lang",l); d.lang=l; if(l==="ar") d.dir="rtl";
+      [l,"en"].forEach(function(c,i){ if(i&&l==="en") return; var k=document.createElement("link"); k.rel="preload"; k.as="script"; k.href="/i18n/"+c+".js"; document.head.appendChild(k); }); }
+  }catch(e){}
+  d.classList.add("js");
+})();
+</script>
+<style>
+/* a stored non-Indonesian language: keep the page hidden until its pack is applied, so the swap is not a layout shift; fail open after 1.2s */
+html[data-boot-lang] body{visibility:hidden;animation:rkBoot 0s 1.2s forwards}
+@keyframes rkBoot{to{visibility:visible}}
+</style>
+</head>
+<body>
+<slot />
+<script>
+import "../scripts/app.js";
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+---
+// HowItWorks section. Text carries data-i18n keys; the client i18n engine swaps it per language.
+---
+<section id="cara">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow" data-i18n="why_eyebrow">Masalahnya</p>
+      <h2 class="rv" style="margin-top:12px" data-i18n="why_title">Tulisan lemah jarang gagal di kalimat.</h2>
+      <p class="lead rv" data-i18n="why_lead">Ia gagal karena tidak pernah diputuskan siapa pembacanya, masalah apa yang dijawab, dan apa yang harus dibuktikan tiap bagian. Meminta AI "tuliskan bab 1" melewatkan semua keputusan itu.</p>
+    </div>
+    <div class="compare">
+      <div class="card rv">
+        <span class="tag no" data-i18n="cmp_no">Langsung menulis</span>
+        <ul>
+          <li data-i18n="cmp_no1">Latar belakang tiga halaman, rumusan masalah tidak nyambung</li>
+          <li data-i18n="cmp_no2">Angka dan sumber muncul entah dari mana</li>
+          <li data-i18n="cmp_no3">Bab 4 tidak menjawab rumusan di bab 1</li>
+          <li data-i18n="cmp_no4">Revisi berarti membongkar ulang, bukan menyunting</li>
+        </ul>
+      </div>
+      <div class="card rv">
+        <span class="tag yes" data-i18n="cmp_yes">Kerangka dulu</span>
+        <ul>
+          <li data-i18n="cmp_yes1">Gap dirumuskan sebelum satu kalimat ditulis</li>
+          <li data-i18n="cmp_yes2">Yang belum ada datanya ditandai, bukan dikarang</li>
+          <li data-i18n="cmp_yes3">Tiap bagian punya tugas yang bisa dicek</li>
+          <li data-i18n="cmp_yes4">Salah struktur ketahuan saat masih murah diperbaiki</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="rv" style="margin:60px 0 8px" data-i18n="steps_title">Empat langkah, semua jenis tulisan</h2>
+    <div class="cards" style="margin-top:26px">
+      <div class="card rv"><b class="num">01 · PETA INTI</b><h3 data-i18n="s1t">Seharusnya vs kenyataan</h3><p data-i18n="s1p">Das Sollen, Das Sein, kesenjangan, pembaca, klaim inti, bukti, tindakan yang diharapkan.</p></div>
+      <div class="card rv"><b class="num">02 · KERANGKA</b><h3 data-i18n="s2t">Template per genre</h3><p data-i18n="s2p">Tiap bagian mendapat empat baris: tugas, isi, bukti, perkiraan panjang. Lampiran ikut dirangka sejak awal.</p></div>
+      <div class="card rv"><b class="num">03 · CEK</b><h3 data-i18n="s3t">Tabel, bukan klaim</h3><p data-i18n="s3p">Dua belas butir universal plus butir khusus genre. Tiga status saja: lolos, menunggu data, gagal.</p></div>
+      <div class="card rv"><b class="num">04 · JUDUL</b><h3 data-i18n="s4t">Ditulis paling akhir</h3><p data-i18n="s4p">Diturunkan dari klaim inti, plus daftar data yang masih harus kamu lengkapi.</p></div>
+    </div>
+
+    <div class="head" style="margin:76px 0 0" id="demo">
+      <p class="eyebrow" data-i18n="demo_eyebrow">Contoh keluaran</p>
+      <h2 class="rv" style="margin-top:12px" data-i18n="demo_title">Kerangka tersusun, lalu diperiksa butir demi butir.</h2>
+      <p class="lead rv" style="margin-top:14px" data-i18n="demo_lead">Yang belum ada datanya ditandai [ISI], yang harus dicek ke sumber ditandai [CEK]. Statusnya diisi dari tabel, bukan dari kesan.</p>
+    </div>
+    <div class="demo rv">
+      <div class="out">
+        <div class="bar"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span>kerangka.md</span><button class="iconbtn" id="d-replay" type="button" data-i18n="demo_replay">Putar ulang</button></div>
+        <pre id="d-out"></pre>
+      </div>
+      <div class="side">
+        <div class="bar"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span>checklist.md</span></div>
+        <div class="meter"><i id="d-meter"></i></div>
+        <div class="tablewrap" tabindex="0"><table><tbody id="d-chk"></tbody></table></div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,43 @@
+---
+import { campuses, stats } from "../data.js";
+// Hero. Text carries data-i18n keys; the client i18n engine swaps it per language.
+// The document mockup (#hdoc) is filled by app.js from the translated genre data.
+const MQ=["Skripsi","Tesis","Disertasi","KKP","Proposal","LPJ","SK","AD/ART","Policy brief","Landing page","README","ADR","Pitch deck","Naskah video","Mind map","Brosur"];
+---
+<div class="hero hero3" id="top">
+ <div class="wrap wide">
+  <p class="eyebrow" data-i18n="hero_eyebrow">Skill terbuka · MIT</p>
+  <h1 class="mega"><span data-i18n="h3_pre">Mulai dari </span><s class="old" data-i18n="h3_old">halaman kosong</s><span class="sp"> </span><em class="new" data-i18n="h3_new">kerangka</em><span data-i18n="h3_post">.</span></h1>
+  <div class="hero-grid">
+   <div class="hero-copy">
+    <p class="kicker" data-i18n-html="hero_h1">Susun <em>kerangka</em> dulu.<br>Tulisannya menyusul.</p>
+    <p class="lead" data-i18n="hero_lead">Rangka adalah skill untuk Claude dan model AI lain. Sebelum satu paragraf ditulis, ia memetakan masalah, menyusun kerangka per bagian, lalu memeriksanya dengan dua belas butir. Berlaku untuk skripsi, laporan KKP, tesis, proposal kegiatan, LPJ, landing page, README, dan naskah video.</p>
+    <div class="cta">
+     <a class="btn primary" href="#pasang"><span data-i18n="hero_cta1">Pasang sekarang</span><svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+     <a class="btn ghost" href="#coba" data-i18n="hero_cta2">Lihat keluarannya</a>
+    </div>
+   </div>
+   <div class="hdoc-wrap" aria-hidden="true">
+    <div class="hdoc" id="hdoc">
+     <div class="hdoc-bar"><span class="dots"><i></i><i></i><i></i></span><b data-i18n="doc_file">kerangka.md</b><span class="live"><i></i><span data-i18n="doc_live">menyusun</span></span></div>
+     <div class="hdoc-tabs" id="hdoc-tabs"></div>
+     <div class="hdoc-body" id="hdoc-body"></div>
+     <div class="hdoc-foot" id="hdoc-foot"></div>
+    </div>
+    <div class="hdoc-under"></div>
+   </div>
+  </div>
+ </div>
+ <div class="bign" id="bign">
+  <div class="wrap wide">
+   <div class="bign-row">
+    <div><b data-n={campuses.length+1}>{campuses.length+1}</b><small data-i18n="stat7">pedoman kampus: UAJM utuh, sisanya catatan bersumber</small></div>
+    <div><b data-n={stats.langs}>{stats.langs}</b><small data-i18n="stat5">bahasa untuk label bagian</small></div>
+    <div><b data-n={stats.evals}>{stats.evals}</b><small data-i18n="stat8">kasus eval jebakan</small></div>
+    <div><b data-n={stats.pass}>{stats.pass}</b><small><span data-i18n="stat6">asersi lolos, dari</span> {stats.total}</small></div>
+   </div>
+   <p class="bign-src" data-i18n="stat_src">Angka dari repo (references/, evals/evals.json, evals/runs/grading.md). Keluaran dinilai oleh model yang sama yang menulisnya.</p>
+  </div>
+ </div>
+</div>
+<div class="marquee" aria-hidden="true"><div class="mq-track">{[0,1].map(()=>(<div>{MQ.map((m,i)=>(<Fragment><span data-i18n={"mq"+(i+1)}>{m}</span><i>✦</i></Fragment>))}</div>))}</div></div>

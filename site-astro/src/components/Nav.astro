@@ -1,0 +1,30 @@
+---
+// Nav section. Text carries data-i18n keys; the client i18n engine swaps it per language.
+---
+<div id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="currentColor"/><path d="M9 7v18M9 7h9a5 5 0 010 10H9m7 0l6 8" stroke="#e8b04a" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Rangka</a>
+    <nav id="menu" aria-label="Utama">
+      <a href="#cara" data-i18n="nav_how">Cara kerja</a>
+      <a href="#coba" data-i18n="nav_try">Coba</a>
+      <a href="#genre" data-i18n="nav_genre">Genre</a>
+      <a href="#kampus" data-i18n="nav_campus">Kampus</a>
+      <a href="#cek" data-i18n="nav_check">Cek</a>
+      <a href="#bukti" data-i18n="nav_proof">Bukti</a>
+      <a href="#pasang" data-i18n="nav_install">Pasang</a>
+      <a href="https://github.com/bryankwandou/rangka">GitHub</a>
+    </nav>
+    <div class="langwrap">
+      <button class="iconbtn" id="langbtn" aria-haspopup="true" aria-expanded="false" aria-label="Bahasa / Language">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 010 18a15 15 0 010-18"/></svg>
+        <span id="langcode">ID</span>
+      </button>
+      <div id="langmenu" role="menu" hidden></div>
+    </div>
+    <button class="iconbtn" id="theme" aria-label="Tema"><span id="themeicon" aria-hidden="true">◐</span></button>
+    <button class="iconbtn" id="burger" aria-expanded="false" aria-controls="menu" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <div id="bar"></div>
+  </div>
+</div>
