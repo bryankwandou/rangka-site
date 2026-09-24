@@ -456,3 +456,43 @@ footer{padding-bottom:0;overflow:hidden}
   .hero3 .cta .btn{flex:1 1 auto;justify-content:center}
   .hdoc-body{max-height:220px}
 }
+
+/* ── hero mockup v4: the outline visibly builds itself (progress strip, cursor sweep, inked bars, ticks, floating score) ── */
+.hdoc-wrap::before{content:"";position:absolute;inset:-12% -8% -10% -6%;z-index:0;pointer-events:none;
+  background:radial-gradient(closest-side,color-mix(in srgb,var(--accent) 22%,transparent),transparent);filter:blur(8px)}
+.hdoc-prog{height:3px;background:var(--line)}
+.hdoc-prog i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--ok)));transform-origin:left}
+[dir=rtl] .hdoc-prog i{transform-origin:right}
+.hd-sec li{grid-template-columns:2.4em minmax(0,1fr) auto;position:relative}
+.hd-sec li>*{grid-column:2}
+.hd-sec li::after{content:"";position:absolute;inset:0 -10px;border-radius:8px;background:color-mix(in srgb,var(--accent) 13%,transparent);opacity:0;pointer-events:none}
+.hd-sec .bar{background:linear-gradient(90deg,var(--accent),color-mix(in srgb,var(--accent) 30%,var(--line-2)) 70%,var(--line-2));opacity:.8}
+.hd-sec .tk{grid-column:3;grid-row:1;align-self:center;width:18px;height:18px;border-radius:50%;background:color-mix(in srgb,var(--ok) 16%,transparent);position:relative}
+.hd-sec .tk::after{content:"";position:absolute;left:6px;top:3.5px;width:4px;height:8px;border:solid var(--ok);border-width:0 2px 2px 0;transform:rotate(45deg)}
+.hd-sec b::after{content:"";display:inline-block;width:2px;height:1em;margin-inline-start:3px;vertical-align:-2px;background:var(--accent);opacity:0}
+.hdoc.play .hd-sec b::after{animation:rkCaret .5s calc(var(--d) + 20ms) steps(1) 2 both}
+.hdoc.play .hd-sec li::after{animation:rkSweep .9s var(--d) ease-out both}
+.hdoc.play .hd-sec .tk{animation:hvPop .4s calc(var(--d) + 700ms) cubic-bezier(.3,1.6,.5,1) both}
+.hdoc.play .hdoc-prog i{animation:rkBar 1.5s .1s cubic-bezier(.4,0,.2,1) both}
+@keyframes rkCaret{0%{opacity:1}50%{opacity:0}100%{opacity:0}}
+@keyframes rkSweep{0%{opacity:0}25%{opacity:1}100%{opacity:0}}
+.hfloat{position:absolute;z-index:2;display:flex;align-items:center;gap:10px;background:var(--paper);border:1px solid var(--line-2);border-radius:14px;
+  box-shadow:0 18px 40px -18px rgba(28,26,23,.45);padding:10px 14px 10px 10px;animation:hvFloat 5s ease-in-out infinite}
+.hf-score{inset-inline-start:-58px;top:236px;transform:rotate(-4deg);flex-direction:column;gap:4px;padding:10px 8px 8px;width:70px}
+.hf-score svg,.hf-score b{grid-area:1/1}.hf-score{display:grid;justify-items:center;align-items:center}
+.hf-score small{grid-area:2/1}
+.hf-score b{display:block;font:700 13px/1 var(--serif);color:var(--ink);letter-spacing:-.02em}
+.hf-score small{display:block;font:500 10px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ok);margin-top:3px}
+.hf-score svg{transform:rotate(-90deg)}
+.hf-score circle{fill:none;stroke-width:4}
+.hf-score .trk{stroke:var(--line)}
+.hf-score .arc{stroke:var(--ok);stroke-linecap:round;stroke-dasharray:113.1;stroke-dashoffset:0}
+.hdoc-wrap.play .hf-score .arc{animation:rkRing 1.6s .9s cubic-bezier(.22,1,.36,1) both}
+@keyframes rkRing{from{stroke-dashoffset:113.1}}
+@media (max-width:1240px){.hf-score{inset-inline-start:-40px}}
+@media (max-width:900px){.hfloat{display:none}.hdoc-wrap::before{inset:-6% 0}}
+@media (prefers-reduced-motion:reduce){
+  .hfloat,.hdoc-wrap.play .hfloat *,.hdoc.play .hd-sec b::after,.hdoc.play .hd-sec li::after{animation:none!important}
+}
+[dir=rtl] .hd-sec .bar{background:linear-gradient(270deg,var(--accent),color-mix(in srgb,var(--accent) 30%,var(--line-2)) 70%,var(--line-2))}
+[dir=rtl] .hdoc-prog i{background:linear-gradient(270deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--ok)))}

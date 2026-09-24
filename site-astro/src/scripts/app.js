@@ -388,12 +388,13 @@ function hdRender(){
     let chip="";
     if(i===1&&s.fill[0]) chip='<span class="isi">['+esc(F)+': '+esc(s.fill[0])+']</span>';
     if(i===3&&s.ver[0]) chip='<span class="cek">['+esc(V)+': '+esc(s.ver[0])+']</span>';
-    h+='<li style="--d:'+(i*110+120)+'ms"><b>'+esc(t)+'</b><i class="bar" style="--w:'+(48+((i*37+hdI*23)%46))+'%"></i>'+chip+'</li>';
+    h+='<li style="--d:'+(i*110+120)+'ms"><b>'+esc(t)+'</b><i class="bar" style="--w:'+(48+((i*37+hdI*23)%46))+'%"></i>'+chip+'<i class="tk"></i></li>';
   });
   body.innerHTML=h+'</ol>';
   const st=[["U1","ok"],["U2","wait"],["U4","ok"],["U9","ok"]];
   foot.innerHTML=st.map(([id,c],i)=>'<span class="pill '+c+'" style="--d:'+(900+i*140)+'ms">'+id+' · '+esc(stLabel(c))+'</span>').join("");
-  const doc=document.getElementById("hdoc"); doc.classList.remove("play"); void doc.offsetWidth; doc.classList.add("play");
+  const lab=document.getElementById("hf-lab"); if(lab) lab.textContent=V;
+  const doc=document.getElementById("hdoc"), wrap=doc.parentNode; doc.classList.remove("play"); wrap.classList.remove("play"); void wrap.offsetWidth; wrap.classList.add("play"); void doc.offsetWidth; doc.classList.add("play");
 }
 function hdNext(){ clearTimeout(hdTimer); if(RM.matches) return; hdTimer=setTimeout(()=>{ if(!hdHover&&!document.hidden){ hdI=(hdI+1)%HD_KEYS.length; hdRender(); } hdNext(); },5200); }
 (function(){

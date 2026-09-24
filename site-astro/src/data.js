@@ -3,7 +3,10 @@ import fs from "node:fs";
 import { pathToFileURL } from "node:url";
 import path from "node:path";
 // cwd is site-astro/ during astro build; import.meta.url points into the bundle, so do not use it
-const root = pathToFileURL(path.resolve(process.cwd(), "..") + path.sep);
+// The skill lives in its own repo now: RANGKA_SKILL_DIR, else a sibling checkout ../../rangka, else ..
+const cands = [process.env.RANGKA_SKILL_DIR, path.resolve(process.cwd(), "../../rangka"), path.resolve(process.cwd(), "..")].filter(Boolean);
+const rootDir = cands.find(d => fs.existsSync(path.join(d, "references"))) || cands[cands.length-1];
+const root = pathToFileURL(rootDir + path.sep);
 const NAMES = { ui:"UI", ugm:"UGM", itb:"ITB", unhas:"Unhas", its:"ITS", binus:"Binus", unm:"UNM", umi:"UMI", unair:"Unair", ub:"UB", ipb:"IPB", unpad:"Unpad", undip:"Undip", uns:"UNS", uny:"UNY", "uin-alauddin":"UIN Alauddin", unismuh:"Unismuh", telkom:"Telkom", uii:"UII", "uin-jakarta":"UIN Jakarta", umy:"UMY", upi:"UPI" };
 const ORDER = Object.keys(NAMES);
 let files = [];
